@@ -2,6 +2,8 @@ name: Terra-CI
 
 on:
   push:
+    # paths:
+    #   - "01-VPC"
 
 jobs:
   terrafrom:
@@ -13,3 +15,9 @@ jobs:
           terraform_version: 1.2.6
       - name: Printing terraform version
         run: terraform --version
+      - name: Changed directory 
+        id: ch_dir 
+        run: |
+          echo "::set-output name=CH_DIR::$(git diff --name-only HEAD@{0} HEAD@{1} | awk -F / '{print $1}')
+      - name: Printing Changed directory name
+        run: echo "{{ steps.ch_dir.outputs.CH_DIR }}"
