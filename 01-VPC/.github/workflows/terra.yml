@@ -1,0 +1,12 @@
+name: Terra-CI
+
+on:
+  push:
+
+jobs:
+  terrafrom:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Verfiy terrafrom version
+        run: terrafrom --version
