@@ -1,10 +1,8 @@
 name: Terra-CI
-
 on:
   push:
     # paths:
     #   - "01-VPC"
-
 jobs:
   terrafrom:
     runs-on: ubuntu-latest
