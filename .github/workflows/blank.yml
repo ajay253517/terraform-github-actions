@@ -16,4 +16,4 @@ jobs:
       - name: Printing terraform version
         run: git log --oneline && terraform --version 
       - name: Get the changed directory 
-        run: bash get_dir.sh
+        run: bash -v get_dir.sh
