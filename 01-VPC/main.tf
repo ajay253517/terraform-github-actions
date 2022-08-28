@@ -97,7 +97,7 @@ resource "aws_route_table_association" "private" {
   subnet_id      = element(aws_subnet.private_subnet.*.id, count.index)
   route_table_id = aws_route_table.private.id
 }
-/*==== VPC's Default Security Group ======*/
+/*=== VPC's Default Security Group ======*/
 resource "aws_security_group" "default" {
   name        = "${var.team}-default-sg"
   description = "Default security group to allow inbound/outbound from the VPC"
